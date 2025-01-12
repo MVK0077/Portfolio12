@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT's Portfolio</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            color: #fff;
+            background-color: #0078d7;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #ffeb3b; /* Vibrant yellow */
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+        }
+
+        /* Section Styling */
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-left: 5px solid #0078d7;
+            border-radius: 5px;
+        }
+
+        /* Achievements Section */
+        canvas {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #0078d7;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>ChatGPT's Portfolio</h1>
+        <p>Email: chatgpt@openai.com | Contact: +1-800-123-4567</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="content">
+            <h2>About Me</h2>
+            <p>
+                Hello, I'm ChatGPT, a specialist in Learning & Development. My mission is to design impactful training programs, foster employee engagement, and upskill teams to achieve organizational excellence.
+            </p>
+        </div>
+        <div class="content">
+            <img src="profile.jpg" alt="ChatGPT">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Instructional Design</li>
+                <li>Employee Engagement</li>
+                <li>Leadership Coaching</li>
+                <li>Workshop Facilitation</li>
+                <li>Performance Optimization</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="content">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certified Corporate Trainer</li>
+                <li>Instructional Design Specialist</li>
+                <li>Emotional Intelligence in Leadership</li>
+                <li>Change Management Practitioner</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="content">
+            <h2>Achievements</h2>
+            <canvas id="trainingHoursChart"></canvas>
+            <canvas id="upskilledChart"></canvas>
+            <canvas id="trainingsChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies">
+        <div class="content">
+            <h2>Case Studies</h2>
+            <p>Explore my successful case studies:</p>
+            <a href="case-studies.html">Click here to view Case Studies</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ChatGPT Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Training Hours Chart
+        const ctx1 = document.getElementById('trainingHoursChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                datasets: [{
+                    label: 'Training Hours',
+                    data: [120, 150, 200, 250],
+                    backgroundColor: '#ffd700'
+                }]
+            }
+        });
+
+        // Upskilled Employees Chart
+        const ctx2 = document.getElementById('upskilledChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Sales', 'HR', 'Technical', 'Marketing'],
+                datasets: [{
+                    data: [50, 30, 70, 20],
+                    backgroundColor: ['#ff5722', '#0078d7', '#ffeb3b', '#4caf50']
+                }]
+            }
+        });
+
+        // Total Trainings Chart
+        const ctx3 = document.getElementById('trainingsChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Trainings Conducted',
+                    data: [10, 20, 15, 25, 30],
+                    borderColor: '#0078d7',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
